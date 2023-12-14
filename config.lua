@@ -1,3 +1,3 @@
 Config = {}
-Config.gpsItem = "bread"
+Config.gpsItem = "gps"
 Config.showRadarInVehicle = true
