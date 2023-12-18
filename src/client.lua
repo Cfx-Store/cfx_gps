@@ -12,7 +12,7 @@ local function refreshRadarState(item, count)
   setRadarState(actualCount > 0)
 end
 
-RegisterNetEvent("esx:playerLoaded", refreshRadarState)
+RegisterNetEvent("esx:playerLoaded", function() refreshRadarState() end)
 RegisterNetEvent("esx:addInventoryItem", refreshRadarState)
 RegisterNetEvent("esx:removeInventoryItem", refreshRadarState)
 
