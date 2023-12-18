@@ -16,5 +16,13 @@ RegisterNetEvent("esx:playerLoaded", function() refreshRadarState() end)
 RegisterNetEvent("esx:addInventoryItem", refreshRadarState)
 RegisterNetEvent("esx:removeInventoryItem", refreshRadarState)
 
-RegisterNetEvent("cfx_gps:setRadarState", setRadarState)
-refreshRadarState()
+RegisterNetEvent("cfx_gps:setRadarState", function(state)
+  if state then
+    setRadarState(true)
+    return
+  end
+
+  refreshRadarState()
+end)
+
+Citizen.CreateThread(refreshRadarState)
